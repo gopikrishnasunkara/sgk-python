@@ -1,0 +1,128 @@
+python function argument:
+the first thing programmer must aware of is that parameteres and arguments are  clearly two different thing although people are using synonymously.
+Parameters are the variables that are defined or used inside parentheses while defining a function, whereas arguments are the value passed for these parameters while calling a function. Arguments are the values that are passed to the function at run-time so that the function can do the designated task using these values.
+
+Syntax:
+def function_name(arg1, arg2): #arg1, arg2 are two function parameters.
+	"""docstring"""
+	---------------
+	---------------
+	return[expression]
+function_name("hello", "hi")	#"Hello", "hi" are two function arguments.
+Types of function arguments in Python:
+1. Required or mandatory arguments
+2.default arguments
+3.keyword arguments
+4.arbitary/variable length arguments
+5.arbitary(or) variable length keyward arguments.
+
+1. Required or mandatory arugments.
+ funcatin name itself saying, requirement or mandatory arguments should passed while calling the funcation. the arguments should be equal to varibles(parameters) passed in the function call.
+syntax1:
+def abc(arg1, arg2):
+	print(arg1 + arg2)
+	arg3 = arg1 + arg2
+	return(arg3)
+x = abc(25, 15)
+print(x) # if we passed arg3 instead of x, it will throw error like "NameError: name 'arg3' is not defined". we should be carefull enoughf  while calling a fucations.
+output:
+40
+40
+syntax2:
+def abc(arg1, arg2):
+	print(arg1 + arg2)
+	arg3 = arg1 + arg2
+	return(arg3)
+x = abc(25)
+print(x)
+output:
+Traceback (most recent call last):
+  File "req.py", line 5, in <module>
+    x = abc(25)
+TypeError: abc() missing 1 required positional argument: 'arg2'
+syntax3:
+def abc(arg1, arg2):
+	print(arg1 + arg2)
+	arg3 = arg1 + arg2
+	return(arg3)
+x = abc(25, 30, 35)
+print(x)
+output:
+Traceback (most recent call last):
+  File "req.py", line 5, in <module>
+    x = abc(25, 30, 35)
+TypeError: abc() takes 2 positional arguments but 3 were given
+
+Default arugments:
+Default arguments allow us to provide defaults for corresponding formal arguments in the function definition. Python uses these defaults if corresponding actual arguments are passed in the function call.
+syntax1:
+def abc(arg1 = 5, arg2 = 20):
+	arg3 = arg1 + arg2
+	return(arg3)
+x = abc()
+print(x)
+output: 25
+
+syntax2:
+def abc(arg1, arg2 = 4):
+	print(arg1)
+	print(arg2)
+	arg3 = arg1 + arg2
+	return(arg3)
+x = abc(10)
+print(x)
+output: def abc(arg1 = 5, arg2):
+           ^
+SyntaxError: non-default argument follows default argument
+syntax3:
+def abc(arg1, arg2 = 4):
+	print(arg1)
+	print(arg2)
+	arg3 = arg1 + arg2
+	return(arg3)
+x = abc(10)
+print(x)
+output:
+10
+4
+14
+Note: when we calling the funcations, we should be defining the parmater in the following ways: (required arg, default arg, keyword arguments, variable length arguments, variable length keyword arg).
+
+keyword arguments:
+Keyword arguments are passed by it’s name instead of their position as opposed to positional arguments in the function call. As a result we don’t have to mind about position of arguments when calling a function.
+Keyword arguments are also referred as named arguments.
+syntax:
+def mul(x = 10, y = 20):
+	print(x)
+	print(y)
+	print(x*y)
+mul(y = 20, x = 10)
+output:
+10
+20
+200
+
+Variable length arguments:
+Variable length positional arguments are useful when we are not certain about number of arguments that are required in the function definition or function would receive. It is quite useful to write functions that take countless number of positional arguments for certain use cases.
+we used to defined the variable length arguments with using *(parametername).
+Syntax: *(parametername)
+def summation(*x):
+	print(sum(x))
+summation(1,2,3,4,5,6,7,8,9,7,8,5,4,8,8)
+output: 85
+
+Variable length keyword arg:
+it is the combination of the keyword arguments and variable length arguments.
+syntax: **(parameter name)
+def summation(x, y= 2, *c, **d):
+	print(x)
+	print(y)
+	print(sum(c))
+	print(d)
+summation(10, 20, 3,4,5,6,7, e = 15,f = 20,g = 30)
+output:
+10
+20
+25
+{'e': 15, 'f': 20, 'g': 30}
+the end
