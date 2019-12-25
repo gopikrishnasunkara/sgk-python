@@ -20,9 +20,32 @@ The function is later executed when needed. We say that we call the function. If
 
 myfunc()
 To call a function, we specify the function name with the round brackets.
+syntax:
+Definitions of functions must precede their usage. Otherwise the interpreter will complain with a NameError.
+# func_prec.py
+def f1():
+    print("f1()")
+f1()
+#f2()
 
-Where to define funcations():
+def f2():
+    print("f2()")
+In the above example, we have two definitions of functions. One line is commented. A function call cannot be ahead of its definition.
+Note: We can call the f2() only after its definition. Uncommenting the line we get a NameError.
+
+# Where to define funcations():
 Functions can be defined inside a module, a class, or another function. Function defined inside a class is called a method.
+1. calling a function from another funcation:
+syntax:
+def f1():
+	print("f1()")
 
-abcd
-
+def f2():
+	f1()
+	print("f2()")
+f2()
+output:
+f1()
+f2()
+explanantion:
+we have defined two funcation f1 and f2. where we have called function F2() first and then line control will go for  def f2(). interpeter first it will read the f2 and will go the inside. then we have meantion f1() inside the f2, so line control will to f1() and then execute the function f1() first and will come back to line funcation2. the output would be f1() and then f2().
