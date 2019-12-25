@@ -38,14 +38,89 @@ Functions can be defined inside a module, a class, or another function. Function
 1. calling a function from another funcation:
 syntax:
 def f1():
-	print("f1()")
+	print("Iam in function 1")
 
 def f2():
 	f1()
-	print("f2()")
+	print("iam printing after executing function1 from function2")
 f2()
-output:
-f1()
-f2()
+
+Output:
+Iam in function 1
+iam printing after executing function1 from function2
+
 explanantion:
-we have defined two funcation f1 and f2. where we have called function F2() first and then line control will go for  def f2(). interpeter first it will read the f2 and will go the inside. then we have meantion f1() inside the f2, so line control will to f1() and then execute the function f1() first and will come back to line funcation2. the output would be f1() and then f2().
+we have defined two funcation f1 and f2. where we have called function F2() first and then line control will go for def f2() then interpeter first it will read the f2 and will go the inside. there we have called f1() inside the f2, so line control will go to f1() and then execute the function f1() first and will come back to line funcation2. the output would be f1() and then f2().
+Return a function from another function():
+syntax:
+def f1(a):
+	def f2(b):
+		return b+5
+	return f2
+
+res = f1(7)
+print(res)
+output: The output would return function f2 object. <function f1.<locals>.f2 at 0x00BB94B0>
+
+syntax2:
+def f1(a):
+	def f2(b):
+		return b+5
+	return f2
+
+res = f1(7)
+print(res)
+res1 = res(6)
+print(res1)
+output: the print funcation return the defined function f2 and second print funcation will return the result of f2.
+<function f1.<locals>.f2 at 0x035994B0>
+11
+
+
+Passing an arguments within funcation():
+syntax1:
+def s(x, y=2, *c):
+	print(x)
+	print(y)
+	print(c)
+	print(x+y+sum(c))
+	def s2(b = 6):
+		return b+5
+	return s2
+res = s(5, 20, 3,4,5,6,7,8)
+print(res)
+res1 = res()
+print(res1)
+output:
+5
+20
+(3, 4, 5, 6, 7, 8)
+58
+<function s.<locals>.s2 at 0x038494B0>
+11
+
+syntax2:
+syntax1:
+def s(x, y=2, *c):
+	print(x)
+	print(y)
+	print(c)
+	print(x+y+sum(c))
+	def s2(b = 6):
+		return b+5
+	return s2
+res = s(5, 20, 3,4,5,6,7,8)
+print(res)
+res1 = res(7)
+print(res1)
+
+output:
+
+5
+20
+(3, 4, 5, 6, 7, 8)
+58
+<function s.<locals>.s2 at 0x038494B0>
+11
+
+Recursive function
