@@ -663,186 +663,379 @@ Programme34:
 import os
 os.system("clear")
 
-totalsales = int(raw_input("Please Enter The Sales Value : "))
-givecountry = raw_input("Please Enter The Country Name in ISO Standard : ")
+totalsales = int(input("Please Enter The Sales Value : "))
+givecountry = input("Please Enter The Country Name in ISO Standard : ")
 
 if givecountry == "IN":
-    if totalsales <= 50:
-        print "The Total Shipping Cost is  : 50INR"
-elif totalsales <= 100:
-        print "The Total Shipping Cost is : 25INR"
-elif totalsales <= 150:
-	    print "The Total Shipping Cost is : 5INR"
-else:
-        print "The Shipping is Done FREE of Cost"
+	if totalsales <= 50:
+		print("The Total Shipping Cost is  : 50INR")
+	elif totalsales <= 100:
+		print("The Total Shipping Cost is : 25INR")
+	elif totalsales <= 150:
+		print("The Total Shipping Cost is : 5INR")
+	else:
+		print("The Shipping is Done FREE of Cost")
+if givecountry == "US":
+	if totalsales <= 50:
+		print("The Shipping Cost is :  100USD")
+	else:
+		print("The Shipping is Done FREE of Cost")
+Output:
+C:\Users\Nemmadi Gopi\Desktop>python com.py
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Please Enter The Sales Value : 100
+Please Enter The Country Name in ISO Standard : US
+The Shipping is Done FREE of Cost
 
-if givecountry == "US": 
-	  if totalsales <= 50:
-	    print "The Shipping Cost is :  100USD"
-else:
-	    "The Shipping is Done FREE of Cost"
+C:\Users\Nemmadi Gopi\Desktop>python com.py
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Please Enter The Sales Value : 150
+Please Enter The Country Name in ISO Standard : IN
+The Total Shipping Cost is : 5INR
 
 Programme35
 import os
 os.system("clear")
 
-print "Program To Print a Sequence of Numbers"
+print("Program To Print a Sequence of Numbers")
 loopcounter = 1
 while (loopcounter <= 10):
-   print "The Line Number is : ", loopcounter
-   loopcounter = loopcounter + 1
+	print("The Line Number is : ", loopcounter)
+	loopcounter = loopcounter + 1
+output:
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Program To Print a Sequence of Numbers
+The Line Number is :  1
+The Line Number is :  2
+The Line Number is :  3
+The Line Number is :  4
+The Line Number is :  5
+The Line Number is :  6
+The Line Number is :  7
+The Line Number is :  8
+The Line Number is :  9
+The Line Number is :  10
+
 
 Programme36
 import os
 os.system("clear")
 
-print "Program To Print a Sequence of Numbers"
+print("Program To Print a Sequence of Numbers")
 loopcounter = 1
 while (loopcounter <= 10):
-   print "The Line Number is : ", loopcounter
-   loopcounter = loopcounter + 1
+	print("The Line Number is : ", loopcounter)
+	loopcounter = loopcounter + 1
 
-print "We Are Out of The Loop"
-print "Operating in The Main Block of The Program"
+print("We Are Out of The Loop")
+print("Operating in The Main Block of The Program")
+output:
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Program To Print a Sequence of Numbers
+The Line Number is :  1
+The Line Number is :  2
+The Line Number is :  3
+The Line Number is :  4
+The Line Number is :  5
+The Line Number is :  6
+The Line Number is :  7
+The Line Number is :  8
+The Line Number is :  9
+The Line Number is :  10
+We Are Out of The Loop
+Operating in The Main Block of The Program
+
 
 Programme37
 import os
 os.system("clear")
 
-print "Program To Print a Sequence of Numbers"
-endpoint = int(raw_input("Please Enter The Termination Point : "))
+print("Program To Print a Sequence of Numbers")
+endpoint = int(input("Please Enter The Termination Point : "))
 loopcounter = 1
 while (loopcounter <= endpoint):
-   print "The Line Number is : ", loopcounter
-   loopcounter = loopcounter + 1
+	print("The Line Number is : ", loopcounter)
+	loopcounter = loopcounter + 1
+Output:
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Program To Print a Sequence of Numbers
+Please Enter The Termination Point : 5
+The Line Number is :  1
+The Line Number is :  2
+The Line Number is :  3
+The Line Number is :  4
+The Line Number is :  5
 
 Programme38
 import os
 os.system("clear")
 
-print "Program To Print a Sequence of Numbers"
-startpoint = int(raw_input("Please Enter The Starting Point : "))
+print("Program To Print a Sequence of Numbers")
+startpoint = int(input("Please Enter The Starting Point : "))
 while (startpoint <= 10):
-   print "The Line Number is : ", startpoint
-   startpoint = startpoint + 1
+	print("The Line Number is : ", startpoint)
+	startpoint = startpoint + 1
+output:
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Program To Print a Sequence of Numbers
+Please Enter The Starting Point : 2
+The Line Number is :  2
+The Line Number is :  3
+The Line Number is :  4
+The Line Number is :  5
+The Line Number is :  6
+The Line Number is :  7
+The Line Number is :  8
+The Line Number is :  9
+The Line Number is :  10
 
 Programme39
 import os
 os.system("clear")
 
-print "Program To Print a Sequence of Numbers"
-startpoint = int(raw_input("Please Enter The Starting Point : "))
+print("Program To Print a Sequence of Numbers")
+startpoint = int(input("Please Enter The Starting Point : "))
 if (startpoint <= 0 or startpoint > 10):
-   print "Sorry! Index is Out of The Boundary...Cannot Proceed"
+	print("Sorry! Index is Out of The Boundary...Cannot Proceed")
 else:
-   while (startpoint <= 10):
-     print "The Line Number is : ", startpoint
-     startpoint = startpoint + 1
+	while(startpoint <= 10):
+		print("The Line Number is : ", startpoint)
+		startpoint = startpoint + 1
+
+Output:
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Program To Print a Sequence of Numbers
+Please Enter The Starting Point : 15
+Sorry! Index is Out of The Boundary...Cannot Proceed
+
+C:\Users\Nemmadi Gopi\Desktop>python com.py
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Program To Print a Sequence of Numbers
+Please Enter The Starting Point : 9
+The Line Number is :  9
+The Line Number is :  10
+
+C:\Users\Nemmadi Gopi\Desktop>python com.py
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Program To Print a Sequence of Numbers
+Please Enter The Starting Point : 0
+Sorry! Index is Out of The Boundary...Cannot Proceed
+
 Programme40
 import os
 os.system("clear")
 
-print "Program To Print a Sequence of Numbers"
-startpoint = int(raw_input("Please Enter The Starting Point : "))
-endpoint = int(raw_input("Please Enter The Ending Point : "))
+print("Program To Print a Sequence of Numbers")
+startpoint = int(input("Please Enter The Starting Point : "))
+endpoint = int(input("Please Enter The Ending Point : "))
 if (startpoint <= 0 or endpoint > 10):
-   print "Sorry! Index is Out of The Boundary...Cannot Proceed"
+	print("Sorry! Index is Out of The Boundary...Cannot Proceed")
 else:
-   while (startpoint <= endpoint):
-     print "The Line Number is : ", startpoint
-     startpoint = startpoint + 1
+	while (startpoint <= endpoint):
+		print("The Line Number is : ", startpoint)
+		startpoint = startpoint + 1
+Output:
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Program To Print a Sequence of Numbers
+Please Enter The Starting Point : 0
+Please Enter The Ending Point : 9
+Sorry! Index is Out of The Boundary...Cannot Proceed
+
+C:\Users\Nemmadi Gopi\Desktop>python com.py
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Program To Print a Sequence of Numbers
+Please Enter The Starting Point : 0
+Please Enter The Ending Point : 8
+Sorry! Index is Out of The Boundary...Cannot Proceed
+
+C:\Users\Nemmadi Gopi\Desktop>python com.py
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Program To Print a Sequence of Numbers
+Please Enter The Starting Point : 1
+Please Enter The Ending Point : 5
+The Line Number is :  1
+The Line Number is :  2
+The Line Number is :  3
+The Line Number is :  4
+The Line Number is :  5
+
 Programme41
 import os
 os.system("clear")
-
-print "Program To Add Natural Numbers..."
-datainput = int(raw_input("Please Enter The Number of Values : "))
-
+print("Program To Add Natural Numbers...")
+datainput = int(input("Please Enter The Number of Values : "))
 finalsum = 0
 loopindex = 1
-
-while loopindex <= datainput:
+while(loopindex <= datainput):
     finalsum = finalsum + loopindex
     loopindex = loopindex + 1
 
-print "The Sum of ", datainput, " Natural Numbers is : ", finalsum
+print("The Sum of ", datainput, " Natural Numbers is : ", finalsum)
+
+Output:
+C:\Users\Nemmadi Gopi\Desktop>python com.py
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Program To Add Natural Numbers...
+Please Enter The Number of Values : 5
+The Sum of  5  Natural Numbers is :  15
+
+C:\Users\Nemmadi Gopi\Desktop>python com.py
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Program To Add Natural Numbers...
+Please Enter The Number of Values : 1
+The Sum of  1  Natural Numbers is :  1
 
 Programme42
 import os
 os.system("clear")
-
-print "Program To Add Natural Numbers..."
-datainput = int(raw_input("Please Enter The Number of Values : "))
-
+print("Program To Add Natural Numbers...")
+datainput = int(input("Please Enter The Number of Values : "))
 finalsum = 0
 loopindex = 1
-
-while loopindex <= datainput:
+while(loopindex <= datainput):
     finalsum = finalsum + loopindex
-    print "The Current Sum is : ", finalsum
+    print("The Current Sum is : ", finalsum)
     loopindex = loopindex + 1
 
-print "The Sum of ", datainput, " Natural Numbers is : ", finalsum
+print("The Sum of ", datainput, " Natural Numbers is : ", finalsum)
+Output:
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Program To Add Natural Numbers...
+Please Enter The Number of Values : 5
+The Current Sum is :  1
+The Current Sum is :  3
+The Current Sum is :  6
+The Current Sum is :  10
+The Current Sum is :  15
+The Sum of  5  Natural Numbers is :  15
 
 Programme43
 import os
 os.system("clear")
-
 loopcounter = 0
-
 while loopcounter < 3:
-    print("Curently Working Inside The Loop")
+    print("Curently Working Inside The Loop", loopcounter)
     loopcounter = loopcounter + 1
 else:
     print("Now Working in The \"else\" Part of The Loop 01")
 
 print("Now Working Totally Outside The Loop Control 01")
 print("Now Working Totally Outside The Loop Control 02")
+Output:
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Curently Working Inside The Loop 0
+Curently Working Inside The Loop 1
+Curently Working Inside The Loop 2
+Now Working in The "else" Part of The Loop 01
+Now Working Totally Outside The Loop Control 01
+Now Working Totally Outside The Loop Control 02
+
 Programme44
 import os
 os.system("clear")
-
 mypassword = ""
-while mypassword != "Personal":
-    mypassword = raw_input("Please Enter Your Password : ")
-    if mypassword == "Personal":
-        print("Congratulations Your Password Matches, You Are Privileged To Enter")
-    else:
-        print("Sorry! Your Password Doesnot Matches, We Cannot Allow You")
+while(mypassword != "Personal"):
+	mypassword = input("Please Enter Your Password : ")
+	if(mypassword == "Personal"):
+		print("Congratulations Your Password Matches, You Are Privileged To Enter")
+	else:
+		print("Sorry! Your Password Doesnot Matches, We Cannot Allow You")
+
+Output:
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Please Enter Your Password : personal
+Sorry! Your Password Doesnot Matches, We Cannot Allow You
+Please Enter Your Password : "Personal"
+Sorry! Your Password Doesnot Matches, We Cannot Allow You
+Please Enter Your Password : "Personal"
+Sorry! Your Password Doesnot Matches, We Cannot Allow You
+Please Enter Your Password : Personal
+Congratulations Your Password Matches, You Are Privileged To Enter
+
 Programme45
 import os
 os.system("clear")
-
 invalidvalue = True
-while invalidvalue:
-    inputvalue = int(input("Please Input a Number Within 10 And 20 : "))
-    if inputvalue >= 10 and inputvalue <= 20:
-        invalidvalue = False
-    else:
-        print("Sorry! Number Should Be in Between 10 And 20 Only")
-        print("Please Re-Enter The Value...")
+while(invalidvalue):
+	inputvalue = int(input("Please Input a Number Within 10 And 20 : "))
+	if(inputvalue >= 10 and inputvalue <= 20):
+		invalidvalue = False
+	else:
+		print("Sorry! Number Should Be in Between 10 And 20 Only")
+		print("Please Re-Enter The Value...")
 print("Finally You Entered The Correct Value...")
 print("Terminating The Process As Valid Input is Found...")
+Output:
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Please Input a Number Within 10 And 20 : 15
+Finally You Entered The Correct Value...
+Terminating The Process As Valid Input is Found...
+
+C:\Users\Nemmadi Gopi\Desktop>python com.py
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Please Input a Number Within 10 And 20 : 10
+Finally You Entered The Correct Value...
+Terminating The Process As Valid Input is Found...
+
+C:\Users\Nemmadi Gopi\Desktop>python com.py
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Please Input a Number Within 10 And 20 : 15
+Finally You Entered The Correct Value...
+Terminating The Process As Valid Input is Found...
+
+C:\Users\Nemmadi Gopi\Desktop>python com.py
+'clear' is not recognized as an internal or external command,
+operable program or batch file.
+Please Input a Number Within 10 And 20 : 30
+Sorry! Number Should Be in Between 10 And 20 Only
+Please Re-Enter The Value...
+Please Input a Number Within 10 And 20 : 35
+Sorry! Number Should Be in Between 10 And 20 Only
+Please Re-Enter The Value...
+Please Input a Number Within 10 And 20 :
+
 Programme46
 import os
 os.system("clear")
-
 import random
 samplevalue = 20
 valueguessed = int(samplevalue * random.random()) + 1
 yourguess = 0
 while yourguess != valueguessed:
-    yourguess = int(input("Please Enter Your Guessed Number : "))
-    if yourguess > 0:
-        if yourguess > valueguessed:
-            print("The Guessed Number Too Big")
-        elif yourguess < valueguessed:
-            print("The Guessed Number is Too Small")
-    else:
-        print("Sorry! You Decided To Leave The Game...")
-        break
+	yourguess = int(input("Please Enter Your Guessed Number : "))
+	if yourguess > 0:
+		print(valueguessed)
+		if yourguess > valueguessed:
+			print("The Guessed Number Too Big")
+		elif yourguess < valueguessed:
+			print("The Guessed Number is Too Small")
+	else:
+		print("Sorry! You Decided To Leave The Game...")
+		break
 else:
     print("That's The Spirit, Finally You Guessed Correctly")
+output:
+
 Programme47
 import os
 os.system("clear")
