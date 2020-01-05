@@ -1,0 +1,253 @@
+#File operations:
+#File is a name location on disk to store related information. It is used to permantely store data in non-volatile memory(e.g hard disks).
+#since the random access memory(RAM) is volatile which loses the data when computer is turned off, we use the files for future use of data.
+#when we want to read from or write to a file we need to open the file it first, when we are done, it need to be closed , so that resources that are tired with file are freed.
+
+#Hence, in Python, a file operation takes place in the following order.
+Open a file
+Read or write (perform operation)
+Close the file
+
+what are type of file modes and descriptions:
+r  -> Open the file for reading only, the file pointer is placed at begining of the file. this is default mode.
+rb -> Open the file for reading only in binary formate, the file pointer is placed at begining of the file. this is default mode.
+r+ -> Opens a file for both reading and writing. The file pointer placed at the beginning of the file.
+rb+-> Opens a file for both reading and writing in binary formate.The file pointer placed at the beginning of the file.
+w  -> Opens a file for writing only. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.
+wb -> Opens a file for writing only in binary format. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.
+w+ -> Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.
+wb+-> Opens a file for both writing and reading in binary format. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.
+a  -> Opens a file for appending. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.
+ab -> Opens a file for appending in binary format. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.
+a+ -> Opens a file for both appending and reading. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
+ab+-> Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
+
+#How to open a file():
+Open command is used to open the file.
+Syntax:
+f = open("file path", 'mode') # the both mode should be in  the quotations mode.
+f.read() # it will read the whole data of the file
+f.readline() #we can use readline() method to read individual lines of a file. This method reads a file till the newline, including the newline character.
+f.readlines() #the readlines() method returns a list of remaining lines of the entire file. All these reading method return empty values when end of file (EOF) is reached.
+
+What is the difference between read mode and write mode in files.
+We are trying to access the file through read mode, so, the file which is not there in the mentioned location, it will through error.
+we are trying to access the file through write mode, so the file which was not there in the mentioned location. so it will create the new file in the mentioned location.
+
+#iam trying to access the file which is not there in the below locaiton. so it will through error.
+f = open(r'C:\Users\ANIL\Desktop\demo.txt','r')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\ANIL\\Desktop\\demo.txt'
+
+# iam trying to access the file through write mode. so, the file which is not there in the mentioned location, so, it will create the new file if the file is not there the mentioned location.
+f = open(r'C:\Users\ANIL\Desktop\demo.txt','w') # it's create the demo file in the desktop
+>>>f  #(<_io.TextIOWrapper name='C:\\Users\\ANIL\\Desktop\\demo.txt' mode='w' encoding='cp1252'>)
+>>> f.write("This is write operation in files") # we are adding some data into the file.
+32
+>>> f.close() # It will close the file in the close. it should be mandatory to close the file when we have done some thing like read or write.
+>>> f = open(r'C:\Users\ANIL\Desktop\demo.txt','r')
+>>> f.read()
+'This is write operation in files'
+
+>>>dir(f)
+>>> dir(f)
+['_CHUNK_SIZE', '__class__', '__del__', '__delattr__', '__dict__', '__dir__', '__doc__', '__enter__', '__eq__', '__exit__', '__format__', '__ge__', '__getattribute__',
+ '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__lt__', '__ne__', '__new__', '__next__', '__reduce__', '__reduce_ex__',
+ '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '_checkClosed', '_checkReadable', '_checkSeekable', '_checkWritable', '_finalizing', 'buffer', 
+'close', 'closed', 'detach', 'encoding', 'errors', 'fileno', 'flush', 'isatty', 'line_buffering', 'mode', 'name', 'newlines', 'read', 'readable', 'readline', 'readlines',
+ 'reconfigure', 'seek', 'seekable', 'tell', 'truncate', 'writable', 'write', 'write_through', 'writelines']
+
+#If we want to write multiple lines of the data so we have to use "\n" in the data.
+
+f = open(r'C:\Users\ANIL\Desktop\demo.txt','w') # it's create the demo file in the desktop
+f.write("line1 \n line2\n line3)
+output:
+line1 
+ line2
+ line3
+#if we want print same as paragraph, we have to use for loop.
+l = ['The simplest way to produce output is\n', 'using the print statement where you can pass \t', 'zero or more expressions separated by commas. This function\n', 'converts the expressions you pass into a string and writes the result to standard output as follows\n']
+>>> f = open(r'C:\Users\ANIL\Desktop\demo.txt','w')
+>>> f.writelines(i for i in l)
+>>> f.close()
+output:
+The simplest way to produce output is
+using the print statement where you can pass 	zero or more expressions separated by commas. This function
+converts the expressions you pass into a string and writes the result to standard output as follows
+
+if i use write operation instead of writelines, it will through below error like write operation will take only string.
+ f = open(r'C:\Users\ANIL\Desktop\demo.txt','w')
+>>> f.write(i for i in l)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: write() argument must be str, not generator
+
+readline():
+l = ['The simplest way to produce output is\n', 'using the print statement where you can pass \t', 'zero or more expressions separated by commas. This function\n', 'converts the expressions you pass into a string and writes the result to standard output as follows\n']
+>>> f = open(r'C:\Users\ANIL\Desktop\demo.txt','w')
+>>> f.writelines(i for i in l)
+>>> f.close()
+>>> f = open(r'C:\Users\ANIL\Desktop\demo.txt','r')
+>>> print(f.readline()) # the readline commnad will print the first line of data at runtime. 
+The simplest way to produce output is
+
+>>> print(f.readline()) # the readline commnad will print the second line of data at runtime. 
+using the print statement where you can pass    zero or more expressions separated by commas. This function
+
+>>> print(f.readline()) # the readline commnad will print the third line of data at runtime. 
+converts the expressions you pass into a string and writes the result to standard output as follows
+
+>>> f.close()
+
+#tell() and seek()
+>>> l = ['The simplest way to produce output is\n', 'using the print statement where you can pass \t', 'zero or more expressions separated by commas. This function\n', 'converts the expressions you pass into a string and writes the result to standard output as follows\n']
+>>> f = open(r'C:\Users\ANIL\Desktop\demo.txt','w')
+>>> f.writelines(i for i in l) #data will be present in the file
+>>> f.close()
+>>> f = open(r'C:\Users\ANIL\Desktop\demo.txt','r')
+>>> f.read() #data will be read from the file
+'The simplest way to produce output is\nusing the print statement where you can pass \tzero or more expressions separated by commas. This function\nconverts the expressions you pass into a string and writes the result to standard output as follows\n'
+>>> f.close()
+>>> f = open(r'C:\Users\ANIL\Desktop\demo.txt','r')
+>>> print(f.tell())
+0
+
+>>> print(f.readlines())
+['The simplest way to produce output is\n', 'using the print statement where you can pass \tzero or more expressions separated by commas. This function\n', 'converts the expressions you pass into a string and writes the result to standard output as follows\n']
+>>> print(f.tell())
+247
+ f = open(r'C:\Users\ANIL\Desktop\demo.txt','r')
+>>> print(f.tell())
+0
+>>> print(f.readlines())
+['The simplest way to produce output is\n', 'using the print statement where you can pass \tzero or more expressions separated by commas. This function\n', 'converts the expressions you pass into a string and writes the result to standard output as follows\n']
+>>> print(f.tell())
+247
+>>> f.close()
+
+#tell method with readline():
+>>> f = open(r'C:\Users\ANIL\Desktop\demo.txt','r')
+>>> print(f.readline())
+The simplest way to produce output is
+
+>>> f.tell()
+39
+>>> print(f.readline())
+using the print statement where you can pass    zero or more expressions separated by commas. This function
+
+>>> f.tell()
+146
+>>> print(f.readline())
+converts the expressions you pass into a string and writes the result to standard output as follows
+
+>>> f.tell()
+247
+ f.close()
+>>> f = open(r'C:\Users\ANIL\Desktop\demo.txt','r')
+>>> print(f.readlines()) it will print the whole data in list.
+['The simplest way to produce output is\n', 'using the print statement where you can pass \tzero or more expressions separated by commas. This function\n', 'converts the expressions you pass into a string and writes the result to standard output as follows\n']
+
+#we have to use the seek() to set the file pointer position.
+#seek() ---> seek() will take two arguments
+
+#syntax:
+
+#file.seek(x,y)
+# x = position to set file pointer
+# y = if 0(starting of the file), if 2(ending of the file), if 1(current position)
+>>> f = open(r'C:\Users\ANIL\Desktop\demo.txt','r')
+>>> print(f.tell()) #it will tell us the current positon of the pointer
+0
+>>> print(f.seek(0,0)) # this will move the file pointer to '0'.
+0
+>>> print(f.readline())
+The simplest way to produce output is
+
+>>> print(f.tell())
+39
+>>> print(f.seek(0,2)) # This line will move the file pointer to end of  the file
+247
+>>> print(f.tell())
+247
+>>> print(f.readline()) # this will tell the alredy file pointer which is in end of the file, so nothing has to read, so output would be in the empty.
+
+>>> print(f.seek(0,0)) # this will move the file pointer to '0'.
+0
+>>> print(f.readline())
+The simplest way to produce output is
+
+>>> print(f.tell())
+39
+>>> print(f.seek(57,1))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+io.UnsupportedOperation: can't do nonzero cur-relative seeks
+>>>
+
+#closed ---> returns 'True' if file is closed,otherwise returns 'False'
+print(f.closed)    # False
+f.close()
+print(f.closed)    # True
+print()
+
+>>> print(f.name)
+C:\Users\ANIL\Desktop\demo.txt
+print(f.mode)
+r
+another way to read the file in python:
+>>> with open(r'C:\Users\ANIL\Desktop\demo.txt','r') as f:
+...     print(f.read())
+...
+The simplest way to produce output is
+using the print statement where you can pass    zero or more expressions separated by commas. This function
+converts the expressions you pass into a string and writes the result to standard output as follows
+
+#if we want the copy the existing file with using the file mode, we can use the below code
+>>> with open(r'C:\Users\ANIL\Desktop\demo.txt','r') as f:
+...     with open(r'C:\Users\ANIL\Desktop\demo copy.txt','w') as f1:
+...             f1.writelines(f.readlines())
+>>> f1.close()
+>>> f.close()
+Output: Same data will create from the existing file.
+
+How to copy the image through file?
+with open(r'C:\Users\ANIL\Desktop\rose.jpg','rb') as f: 	#image name should be exactly match, what we have mentioned
+	with open(r'C:\Users\ANIL\Desktop\rose copy.jpg','wb') as f1:	#the above image should not be as this line
+		f1.write(f.read())
+	f1.close()
+f.close()
+
+Output: one more picture will be created with some other name
+
+(or)
+f = open(r'C:\Users\ANIL\Desktop\rose.jpg','rb')
+>>> f1 = open(r'C:\Users\ANIL\Desktop\rose copy.jpg','wb')
+>>> f1.write(f.read())
+239653
+>>> f.close()
+>>> f.close()
+>>> f1.close()
+	
+
+
+read and writing the file through binary mode:
+with open(r'C:\Users\ANIL\Desktop\rose.jpg','rb') as f:
+	with open(r'C:\Users\ANIL\Desktop\rose copy1.jpg','wb') as f1:
+		f1.writelines(f.readlines())
+		print(type(f1))	
+	f1.close()
+f.close()
+Output: one more picture will be created with some other name
+
+#while we reading the image, if we use the readline, that could be an error.
+with open(r'C:\Users\ANIL\Desktop\rose.jpg','rb') as f:
+	with open(r'C:\Users\ANIL\Desktop\rose copy2.jpg','wb') as f1:
+		f1.write(f.readlines()) #TypeError: a bytes-like object is required, not 'list'
+		print(type(f1))	
+	f1.close()
+f.close()
+Output: Traceback (most recent call last):
+  File "ros.py", line 3, in <module>
+    f1.write(f.readlines())
+TypeError: a bytes-like object is required, not 'list'
