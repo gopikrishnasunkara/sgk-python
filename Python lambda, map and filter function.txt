@@ -1,0 +1,103 @@
+#Python Lambda function():
+python allows you to create anonymous function i.e function having no names using a facility called lambda function.
+
+Lambda functions are small functions usually not morethan a line. it can have any number of arguments just like a normal functions. the body of the lambda functions is very small and consists of only one expression.
+The result of the expression is the value when the lambda is applied to an argument. Also there is no need for any return statement in lambda funtion.
+
+let's take an example.
+consider a function multiply()
+
+def multiply(x, y):
+    return x * y
+
+This function is too small, so let's convert it into a lambda function.
+To create a lambda function first write keyword lambda followed by one of more arguments seperated by comma(,), followed by colon a(:), followed by a single line expression.
+
+Syntax:
+s = lambda(argument x,y) : expression(x*y)
+r = lambda x, y: x * y
+r(12, 3)   # call the lambda function
+
+Output:
+36
+
+Here we are using two arguments x and y, expression after colon is the body of the lambda function. As you can see lambda function has no name and is called through the variable it is assigned to.
+You don't need to assign lambda function to a variable.
+print((lambda x,y: x*y)(3,4))
+Output:
+12
+Note: lambda functions can not have morethan one expression.
+
+# Map() function in python
+The python map() function is used to apply a function on all elements of specified iterable and return map object. Python map objects is an iterator, so we can iterate over its elements.
+We can also convert map object to sequence objects such as list , tuple etc, usign their factory functions.
+
+Python map() function syntax is:
+	map(function, iterable, ...)
+	map(x, y)
+	# x is a function
+	# y ----> must be a iterable(i.e, sequence)
+	# map() function iterate over the iterable(i.e,sequence) gets each value from sequence and passed to 1st argument(i.e, function())
+
+we can pass multiple iterable arguments to map() function, in that case, the specified function must have that many arguments. The function will be applied to these iterable elements in parallel.
+with multiple iterable arugments, the map iterator stops when  the shortest iterable is exhausted.
+
+#passing the lambda function in map function().
+
+map_iterator = map(lambda s: print(str(s).upper()), 'abc')
+>>> print(type(map_iterator))
+<class 'map'>
+>>> print(map_iterator)
+<map object at 0x01BF0990>
+>>> a = list(map_iterator)
+A
+B
+C
+>>> a = abcd
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'abcd' is not defined
+>>> a= "abcd"
+>>> a.upper()
+'ABCD'
+
+print(map_iterator)
+<map object at 0x01BF09D0>
+>>> print(list(map_iterator))
+[]
+Note: we have print the function and  then output should be in generator(Object) formate. so if we want to print agagin, then output would be in empty.
+
+# filter() function in python
+# filter() function takes exactely 2 arguments
+
+#syntax:
+     # filter(x,y)
+          # x ---> must be a "function or None"
+          # y ---> must be iterable
+>>> c = filter(lambda l: l%2,[1,2,3,4,5,6,7,8,9,10])
+>>> print(list(c))
+[1, 3, 5, 7, 9]
+>>> print(c)
+<filter object at 0x01BF0A10>
+>>> print(list(c))
+[]
+>>> c = filter(lambda l: l%2,[1,2,3,4,5,6,7,8,9,10])
+>>> print(c)
+<filter object at 0x01BF0B30>
+>>> print(list(c))
+[1, 3, 5, 7, 9]
+>>> c = filter(lambda l: l%2==0,[1,2,3,4,5,6,7,8,9,10])
+>>> print(c)
+<filter object at 0x01BF0A30>
+>>> print(list(c))
+[2, 4, 6, 8, 10]
+>>> print(list(filter(lambda l: l%2,[1,2,3,4,5,6,7,8,9,10])))
+[1, 3, 5, 7, 9]
+>>> print(list(filter(None,[1,2,3,4,5,6,7,8,9,10])))
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+>>>
+
+#print(list(filter(lambda n: n%2,[1,2,3],[4,5,6])))              #error: TypeError: filter expected 2 arguments, got 3
+print(list(filter(lambda n: n%2)))                               #error: TypeError: filter expected 2 arguments, got 1
+print(list(filter(None)))                                        #error: TypeError: filter expected 2 arguments, got 1
+print(list(filter([1,2,3,4,5,6,7,8,9,10])))                      #error: TypeError: filter expected 2 arguments, got 1
