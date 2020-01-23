@@ -1,0 +1,45 @@
+Python OOPs Concepts:
+Like other general purpose languages, python is also an object-oriented language since its beginning.
+Python is an object-oriented programming language. It allows us to develop applications using an Object Oriented approach. 
+In Python, we can easily create and use classes and objects.
+Major priniciples of object-oriented programming systems are following as belo.
+Object
+Class
+Method
+Inheritance
+Polymorphism
+Data Abstraction
+Encapsulation
+
+Object:
+The object is the entity that has state and behaviour. It may be any real-world object like the mouse, keyboard, chair, table, pen, etc.
+Everything in Python is an object, and almost everything has attributes and methods. All functions have a built-in attribute __doc__, which returns the doc string defined in the function source code.
+object is an instance of a class.
+
+# Each object has 2 charecteristics
+# 1. state         state is defind by the attributes or variables
+# 2. behavior      behavior is defind by the methods
+
+Class:
+#Class is template or blueprint of the specific object.
+class can be defined with using keyword class and class contains combination of varible and methods.
+
+Creating a class in python
+
+ # class <classname>:
+   # '''doc string about the class'''
+   # attributes (or) variables + methods
+
+class student():
+	''' This class is designed to demonistrate creating a class in python'''
+	a = 5
+	b = 6
+	def addition(self):
+		return(self.a + self.b)
+	def substraction(self):
+		return(self.a - self.b)
+s1 = student()(i.e s1 as reference object or instance objects) and creating a object for the class is called as "initilization".
+s1.addition() # behind the logic as student.addition(s1)
+s1.substration() # behind the logic as student.substraction(s1)
+student.addition(s1)
+student.substraction(s1)
