@@ -1,0 +1,131 @@
+What is the generator function in the python?
+Note: It is a part of the Generator function and replaces the return keyword. Whenever the control hits the yield call, the function goes in a suspended state.
+A generators in python is a function with unique abilities. We can either suspend or resume it at run-time. It returns an iterator object which we can step through and access a single value in each iteration.
+Alternatively, we can say that the generator provides a way of creating iterators. It solves the following common problem.
+In python, it is cumbersome to build an iterator. First, we required to write a class and implement the __iter__() and __next()__ methods. secondlym we need to manage the itnernal states and throw stopiteration exception when there is no element to return.
+How to Create a Generator in Python?
+Python generator gives an alternative and simple approach to return iterators. The procedure to create the generator is as simple as writing a regular function.
+There are two straightforward ways to create generators in Python
+
+The python generators gives an alternative and simple approach to retrun iterators. The procedure to create generators is a simple as user defined functions.
+There are two straight forward ways to creating an generators.
+we will write a generator function in the same style which we have written in user defined funcation.
+The difference is that we use the yield statement instead of the return. It notifies Python interpreter that the function is a generator and returns an iterator.
+
+Example:
+
+# Regular function
+def function_a():
+    return "a"
+
+# Generator function
+def generator_a():
+    yield "a"
+#The two functions above perform exactly same action (returning/yielding the same string). However, if you try to inspect the generator function, it won’t match what the regular function shows.
+
+function_a()
+>>> "a"
+
+generator_a()
+
+>>> <generator object a at 0x000001565469DA98>
+
+The return statement is the last call in a function, whereas the yield temporarily suspends the function, preserves the states, and resumes execution later.
+
+Iteration is the idea of repeating some process over a sequence of items. In Python, iteration is usually related to the for loop.
+An iterable is an object that supports iteration.
+To be an iterable, it must describe to a for loop two things:
+What item comes next in the iteration.
+When should the loop stop iteration.
+Generators are iterables.
+
+a = [4,5,6]
+def myfun(b):
+    for x in b:
+        print('before yield')
+        yield x
+        print('after yield')
+c = myfun(a)
+print('Generator function:',c)
+print(next(c))
+print()
+print(next(c))
+print()
+print(next(c))
+print()
+#print(next(c))
+print()
+#print(c.__next__())
+#print(c.__next__())
+#print(c.__next__())
+#print(c.__next__())
+in the above example,  the generator funcaiton has for loop to iterate over the list items. We’ve placed a yield statement inside the ‘for loop.’
+After creating the generator function, we’ve called it and passed a as the input argument. It will only return the iterator object.
+The generator function will not execute execution until we call the next() method over the returned object, i.e., ‘a’ We are doing four such steps to iterate over the ‘a’ object.
+The first three next() calls have succeeded and returned the corresponding element of list. However, the last one raised the StopIteration exception as the iterator had no items left.
+
+Generator Expression
+Python allows writing generator expressions to create anonymous generator functions.
+
+This procedure is similar to a lambda function creating an anonymous function.
+
+The syntax of a generator expression is the same as of list comprehension in Python. However, the former uses the round parentheses instead of square brackets.
+# Generator Expression Syntax
+# 
+gen_expr = (var**(1/2) for var in seq)
+Another difference between a list comprehension and a generator expression is that the LC gives back the full list, whereas the generator expression returns one value at a time.
+# Demonstrate Python Generator Expression
+
+# Define the list
+alist = [4, 16, 64, 256]
+
+# Find square root using the list comprehension
+out = [a**(1/2) for a in alist]
+print(out)
+
+# Use generator expression to calculate the square root
+out = (a**(1/2) for a in alist)
+print(out)
+print(next(out))
+print(next(out))
+print(next(out))
+print(next(out))
+print(next(out))
+
+while executing the above example, first, the list comprehsion return the list containing the sequence of elements. so we can get conclusive result here.
+Next, the generator expression produces an iterator object which gives one result at a time. The size of the list is four. So we have four successive next() method calls which print the square root of respective list elements.
+Next, the generator expression produces an iterator object which gives one result at a time. The size of the list is four. So we have four successive next() method calls which print the square root of respective list elements.
+
+Since we called the next() method one more time, it caused the StopIteration exception. Please check from the below output.
+
+[2.00, 4.0, 8.00, 16.0]
+ at 0x000000000359E308>
+2.0
+4.0
+8.0
+16.0
+Traceback (most recent call last):
+  File "C:/Python/Python35/python_generator.py", line 17, in 
+    print(next(out))
+StopIteration
+
+How To Use Generator In Python?
+We now know how to create a generator. Let’s now focus on using it in programs. In the above coding snippets, we’ve used the next() method on the iterator returned by the generator function.
+
+Using Next() Method
+It (next()) is the most common way we can request a value from the generator function. Calling the next() method triggers its execution, which in turn gives a result back to the caller.
+
+See the below example; it prints the values from a list using the generator approach.
+
+Yield vs. Return
+
+Generator Vs. Function
+We have listed down a few facts to let you understand the difference between a generator and a regular function.
+
+A generator uses the yield statement to send a value back to the caller whereas a function does it using the return.
+The generator function can have one or more than one yield call.
+The yield call pauses the execution and returns an iterator, whereas the return statement is the last one to be executed.
+The next() method call triggers the execution of the generator function.
+Local variables and their states retain between successive calls to the next() method.
+Any additional call to the next() will raise the StopIteration exception if the there is no further item to process.
+Following is the Generator function having multiple yield statements.
