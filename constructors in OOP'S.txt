@@ -1,0 +1,63 @@
+what is the  constructor?
+#Constructor is nothing but just like a method and then first parameter as "self" in constructor.
+#the "self" keyword which will holds the current class instance object.
+syntax:
+
+	def __init__(self):
+		# body of the constructor
+
+Types of constrctors:
+
+we have two types of constructors
+1. default constructor
+2. paramaterized constructor
+
+1. default constructor:
+The default constructor is simple constructor which doesn’t accept any arguments.It’s definition has only one argument which is a reference to the instance being constructed.
+class Student():		#creating the class with class variable
+	student = " "		#class variable
+	def __init__(self):	#defining a constructor
+		self.student = "vissu" #creating an instance variable
+	def std(self):		#defining the instance with std name
+		print(self.student) #printing the self.student
+s1 = Student() 			#creating an object of the class, it is called as initialize.
+s1.std()			#calling the instance method using the object s1
+
+Output: vissu
+
+2. paramaterized constructor:
+#A Constructor with parameters is known as parameterized constructor. The parameterized constructor takes its first argument as a reference to the instance being constructed known as self and the rest of the arguments are provided by the programmer.
+example:
+class student():							#creating a class as student
+	class_name = "A1"						#declaring the class variables
+	No_of_subject = 6
+	#creating an constructor
+	def __init__(self, name, age, s1, s2):
+		self.name = name					# creating a instance variable
+		self.age = age
+		self.s1 = s1
+		self.s2 = s2
+	def std_details(self):						#declaring an instance method
+		print("He is belonging to class section", self.class_name)#printing the instance variables
+		print("he has to study", self.No_of_subject, "a year")
+		print("name of the student is: ", self.name)
+		print("He is ", self.age, "years old")
+		print("he got ", self.s1, "Marks")
+		print("he got ", self.s2, "Marks")
+stde1 = student("vissu", 12, 99, 35)				#creating an object of the class, it is called as initialize.
+stde2 = student("swamy", 13, 36, 99)				#creating an object of the class, it is called as initialize.
+stde1.std_details()						#calling the instance method using the object s1
+stde2.std_details()						#calling the instance method using the object s2
+
+output: He is belonging to class section A1
+he has to study 6 a year
+name of the student is:  vissu
+He is  12 years old
+he got  99 Marks
+he got  35 Marks
+He is belonging to class section A1
+he has to study 6 a year
+name of the student is:  swamy
+He is  13 years old
+he got  36 Marks
+he got  99 Marks

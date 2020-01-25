@@ -21,7 +21,8 @@ object is an instance of a class.
 # 2. behavior      behavior is defind by the methods
 
 Class:
-#Class is template or blueprint of the specific object.
+#Class is template or blueprint of the specific object.(or)
+it is a blueprint of objects defining the common attributes and behavior.
 class can be defined with using keyword class and class contains combination of varible and methods.
 
 Creating a class in python
@@ -32,11 +33,11 @@ Creating a class in python
 
 class student():
 	''' This class is designed to demonistrate creating a class in python'''
-	a = 5
+	a = 5				#a and b are the class attributes
 	b = 6
-	def addition(self):
-		return(self.a + self.b)
-	def substraction(self):
+	def addition(self):		#defining the method addition
+		return(self.a + self.b)	#return funcation will return the values
+	def substraction(self):		#defining the method substracte
 		return(self.a - self.b)
 s1 = student()(i.e s1 as reference object or instance objects) and creating a object for the class is called as "initilization".
 s1.addition() # behind the logic as student.addition(s1)
