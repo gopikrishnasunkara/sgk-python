@@ -1,0 +1,192 @@
+#Types of variables in the oops python:
+#we have a four types of variable in the python oops concept.
+1. Global variable
+2. Class variable
+3. Instance variable
+4. Local variable
+
+#Global variables:
+#Global variables are not bounded to any of the class or instance or local variable, we use them directly in the entire programme.
+a = 10
+b = 15 
+c = 20
+Class variables:
+#class variables are bounded to class. we have to defined these variables inside the class and outside of the constructor.
+d = 10
+e = 15 
+f = 20
+
+global g   # 'global' is the keyword used to define global variables inside the class/method
+g = 40     # g is global variable
+
+#instance variables:
+#instance variables are bound to current class instance(i.e, object)
+def __init__(self, m, n, o):
+	v.m = m    # Nothing but v.m(i.e, object.m) = m
+	v.n = n    # Nothing but v.n(i.e, object.n) = n
+	v.o = o    # Nothing but v.o(i.e, object.o) = o
+#local variable:
+#These local variables are bounded to that particular method/function only.
+def add(self, h):
+	l = int(input("enter the l value: "))	# l,m are local variable, bounded to that perticular method/function only
+	print(h+l)
+
+# NOTE:-
+# 1. global variables are called directely
+# 2. class variables are called with classname (or) instance(i.e, object)
+# 3. instance variables are called with instance(i.e, object) only
+# 4. local variables are not called outside of the code where they are initialized
+
+
+print(a,b,c,g)                # Accessing global variables
+print(v.d,v.e,variables.f)    # Accessing class variables
+print(v.m,v.n,v.o)            # Accessing instance variables
+
+                              # Accessing local variables
+# print(v.l)                  AttributeError: 'variables' object has no attribute 'l'
+# print(variables.l)          AttributeError: type object 'variables' has no attribute 'l'
+# print(v.m)                  AttributeError: 'variables' object has no attribute 'm'
+# print(variables.m)          AttributeError: type object 'variables' has no attribute 'm'
+
+#Exmaple:
+school = "abc"
+mandatory = "identity card"
+class student():
+	imp1 = "pen"
+	imp2 = "books"
+	def __init__(self, name, age, section):
+		self.name = name
+		self.age  = age
+		self.section = section
+	def details(self):
+		print("He is studing in :", school)
+		print(mandatory +"is mandatory for every student")
+		print("student needful thing are: ", self.imp1, self.imp2)
+		print("student name is :", self.name)
+		print("student age is:", self.age)
+		print("student belongs to :", self.section)
+	def personals(self):
+		school_fee = 50000
+		van_fee = 10000
+		print("He is studing in :", school)
+		print(mandatory + "is mandatory for every student")
+		print("student needful thing are: ", self.imp1, self.imp2)
+		print("student name is :", self.name)
+		print("student age is:", self.age)
+		print("student belongs to :", self.section)
+s1 = student("vissu",25, "A")
+s2 = student("vissu",25, "B")
+s1.details()
+s2.details()
+s1.personals()
+s1.personals()
+s2.personals()
+
+#output:
+C:\Users\nemma\Desktop>py hel.py
+He is studing in : abc
+identity cardis mandatory for every student
+student needful thing are:  pen books
+student name is : vissu
+student age is: 25
+student belongs to : A
+He is studing in : abc
+identity cardis mandatory for every student
+student needful thing are:  pen books
+student name is : vissu
+student age is: 25
+student belongs to : B
+He is studing in : abc
+identity cardis mandatory for every student
+student needful thing are:  pen books
+student name is : vissu
+student age is: 25
+student belongs to : A
+He is studing in : abc
+identity cardis mandatory for every student
+student needful thing are:  pen books
+student name is : vissu
+student age is: 25
+student belongs to : A
+He is studing in : abc
+identity cardis mandatory for every stuent
+student needful thing are:  pen books
+student name is : vissu
+student age is: 25
+student belongs to : B
+
+#example2: we are trying to access the local variable in outside of the method
+school = "abc"
+mandatory = "identity card"
+class student():
+	imp1 = "pen"
+	imp2 = "books"
+	def __init__(self, name, age, section):
+		self.name = name
+		self.age  = age
+		self.section = section
+	def details(self):
+		print("He is studing in :", school)
+		print(mandatory +"is mandatory for every student")
+		print("student needful thing are: ", self.imp1, self.imp2)
+		print("student name is :", self.name)
+		print("student age is:", self.age)
+		print("student belongs to :", self.section)
+	def personals(self):
+		school_fee = 50000
+		van_fee = 10000
+		print("He is studing in :", school)
+		print(mandatory + "is mandatory for every student")
+		print("student needful thing are: ", self.imp1, self.imp2)
+		print("student name is :", self.name)
+		print("student age is:", self.age)
+		print("student belongs to :", self.section)
+s1 = student("vissu",25, "A")
+s2 = student("vissu",25, "B")
+print(school)
+print(mandatory)
+print(s1.imp1, s1.imp2)
+print(s1.name, s1.age, s1.section)
+#print(s1.school_fee) #AttributeError: 'student' object has no attribute 'school_fee'
+#print(s1.van_fee)    #AttributeError: 'student' object has no attribute 'school_fee'	
+s1.details()
+s2.details()
+s1.personals()
+s1.personals()
+s2.personals()
+
+output: 
+abc
+identity card
+pen books
+vissu 25 A
+He is studing in : abc
+identity cardis mandatory for every student
+student needful thing are:  pen books
+student name is : vissu
+student age is: 25
+student belongs to : A
+He is studing in : abc
+identity cardis mandatory for every student
+student needful thing are:  pen books
+student name is : vissu
+student age is: 25
+student belongs to : B
+He is studing in : abc
+identity cardis mandatory for every stuent
+student needful thing are:  pen books
+student name is : vissu
+student age is: 25
+student belongs to : A
+He is studing in : abc
+identity cardis mandatory for every stuent
+student needful thing are:  pen books
+student name is : vissu
+student age is: 25
+student belongs to : A
+He is studing in : abc
+identity cardis mandatory for every stuent
+student needful thing are:  pen books
+student name is : vissu
+student age is: 25
+student belongs to : B
