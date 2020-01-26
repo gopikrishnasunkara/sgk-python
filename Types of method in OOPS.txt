@@ -1,0 +1,82 @@
+Types of Methods in the python:
+In python there are three different method types. they are
+1. instance method
+2. class method
+3. static method
+ 
+The above Each one of them have different characteristics and should be used in different situations.
+
+Let start with above methods.
+1. instance method():
+this is the method can only called if the class has been instantiated. once an object of that class has been created the instance method can be called and can access all the attributes of that class through the reserved word self.
+An instance method is capable of creating, generating and setting new instance attributes and calling other instance, class and static method
+
+#for the class instance ist argument as 'self' always(i.e, object/instance)
+#the instance methods are bounded to instance(i.e, object)only, if any changes in the instance method will effect to instance(i.e, object) only
+
+2. Class method():
+The Class method which have to be created with the decorator @class method, the class method share the characterstics with the static methods and that is that they can be called without having an instance of the class.
+The difference relies on the capability to access other methods and class attributes but no instance attributes.
+
+#For class methods first argument as 'cls' always(i.e, cla points to current class name)
+#the class methods are bounded to class, any change in the class method which will be effected to all class instance (i.e, objects)
+
+# we cann't change the value of a class variable in instance method until and unless we use the class name, but we can change the value of a
+# instance variable in instance method
+
+# When should we go for class methods?
+     # when there is a change in the class that should effect to all the class instances(i.e, objects)
+     # example: there is a class called 'car drawing sheet',initially we are taken car colour as 'red' in the class,but after designing
+     # some objects to the class we changed the car colour 'red' to 'blue',so this colour change should effect to all the class objects
+     # in this senario we use class method.
+
+
+3.static method():
+A static method in python must be created by decorating it with @static method in order to let python now that the method be static.
+them main character of a static method is that they can be called without instantiating the class.
+# For static methods no 'self' (or) no 'cls' arguments
+# static methods are also bounded to class.
+# When should we go for static methods?
+       # when we want a method to process some data without respecting to the class (or) instance(i.e, without passing 'cls'/'self' as 1st arg)
+       # in this senario if we use class method/instance method unnecessarly we are increasing the load on interpreter by passing the
+       # cls/self as 1st argument to the method,so to avoid this we use static methods
+       # we can change static method to class method/instance method at any time we want
+Example:
+class student():
+	a = 1
+	b = 2
+	def __init__(self,firval,secval):
+		self.c = firval
+		self.d = secval
+	def add(self):
+		print(self.a + self.b + self.c + self.d) # a,b are class variables, we can call class variables with instance (self.a == instance.a)
+		self.c = 50	
+	# changing the class variable value in instance method
+        # Case1:
+		self.a = 50  # this will create a instance variable 'a' with the value 50
+        # Case2:
+		student.a = 47  # this will change the class variable 'a' value from previous value to 47
+	@classmethod
+	def substract(cls):
+		print(cls.a - cls.b - s1.c - s1.d)#(47-2-50-7)
+	@staticmethod
+	def multiply(p,q):
+		print((p*q) * (s1.c*s1.d*student.a*student.b)) #((5*7) * (50*7*47*2))
+
+s1 = student(5,7)	# creating object of the class
+s1.add()		# calling instance method
+student.add(s1)
+s1.substract()
+student.substract()
+s1.multiply(5,7)	# calling static method
+student.multiply(5,7)
+
+output: 
+15
+109
+-12
+-12
+47
+1151500
+47
+1151500
