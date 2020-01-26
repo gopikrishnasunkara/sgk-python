@@ -61,7 +61,7 @@ class student():
 		self.section = section
 	def details(self):
 		print("He is studing in :", school)
-		print(mandatory +"is mandatory for every stuent")
+		print(mandatory +"is mandatory for every student")
 		print("student needful thing are: ", self.imp1, self.imp2)
 		print("student name is :", self.name)
 		print("student age is:", self.age)
@@ -70,7 +70,7 @@ class student():
 		school_fee = 50000
 		van_fee = 10000
 		print("He is studing in :", school)
-		print(mandatory + "is mandatory for every stuent")
+		print(mandatory + "is mandatory for every student")
 		print("student needful thing are: ", self.imp1, self.imp2)
 		print("student name is :", self.name)
 		print("student age is:", self.age)
@@ -84,30 +84,31 @@ s1.personals()
 s2.personals()
 
 
-output: C:\Users\nemma\Desktop>cd desktop
+output:
+C:\Users\nemma\Desktop>cd desktop
 The system cannot find the path specified.
 
 C:\Users\nemma\Desktop>py hel.py
 He is studing in : abc
-identity cardis mandatory for every stuent
+identity cardis mandatory for every student
 student needful thing are:  pen books
 student name is : vissu
 student age is: 25
 student belongs to : A
 He is studing in : abc
-identity cardis mandatory for every stuent
+identity cardis mandatory for every student
 student needful thing are:  pen books
 student name is : vissu
 student age is: 25
 student belongs to : B
 He is studing in : abc
-identity cardis mandatory for every stuent
+identity cardis mandatory for every student
 student needful thing are:  pen books
 student name is : vissu
 student age is: 25
 student belongs to : A
 He is studing in : abc
-identity cardis mandatory for every stuent
+identity cardis mandatory for every student
 student needful thing are:  pen books
 student name is : vissu
 student age is: 25
@@ -131,7 +132,7 @@ class student():
 		self.section = section
 	def details(self):
 		print("He is studing in :", school)
-		print(mandatory +"is mandatory for every stuent")
+		print(mandatory +"is mandatory for every student")
 		print("student needful thing are: ", self.imp1, self.imp2)
 		print("student name is :", self.name)
 		print("student age is:", self.age)
@@ -140,7 +141,7 @@ class student():
 		school_fee = 50000
 		van_fee = 10000
 		print("He is studing in :", school)
-		print(mandatory + "is mandatory for every stuent")
+		print(mandatory + "is mandatory for every student")
 		print("student needful thing are: ", self.imp1, self.imp2)
 		print("student name is :", self.name)
 		print("student age is:", self.age)
@@ -166,13 +167,13 @@ identity card
 pen books
 vissu 25 A
 He is studing in : abc
-identity cardis mandatory for every stuent
+identity cardis mandatory for every student
 student needful thing are:  pen books
 student name is : vissu
 student age is: 25
 student belongs to : A
 He is studing in : abc
-identity cardis mandatory for every stuent
+identity cardis mandatory for every student
 student needful thing are:  pen books
 student name is : vissu
 student age is: 25
