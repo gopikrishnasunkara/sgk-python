@@ -1,0 +1,98 @@
+What is the polymorphism in python?
+poly means "many"
+Morphism means "forms"
+polymorphism = "Many forms"
+#In programming, polymorphism means same function name(but different signatures) being uses for different types.
+in python, polymorphism define method in the chaild class with the same name as defined in their parent class.
+As we know, a child class inherits all the methods from the parent class. However, you will encounter situations where the method inherited from the parent class doesn’t quite fit into the child class. 
+In such cases, you will have to re-implement method in the child class. This process is known as Method Overriding.
+
+If you have overriddent a method in the chaild class, then the version of the method will be called based upon the type of the object to call it.
+if a chaild class object is used to call an overridden method then the chaild class version of the method is called. on the other hand, if parent class object is used to call an overridden method,
+then the parent class version of the method is called.
+# Ways to achive polymorphism
+
+    # 1.Method over loading      # To impliment over loading inheritance is not mandatory,we can do overloading in the same class
+
+             # 1. changing number of arguments to the method
+             # 2. changing type of arguments to the method
+
+    # 2.Method over riding       # To impliment over raiding inheritance is mandatory/must and should
+
+
+
+
+# Method over loading
+
+# NOTE: # python doesn't supports 'Method over loading', We may overload the methods but can only use the latest defined method
+
+# Case:1                          changing number of arguments to the method
+Example: 1
+lass overload:
+    def product(self,a, b):
+        p = a * b
+        print(p,'\n')
+
+    def product(self,a, b, c):
+        p = a * b * c
+        print(p,'\n')
+
+o = overload()
+#o.product(4,5)                            # TypeError: product() missing 1 required positional argument: 'c'
+o.product(4,5,6)                          # 120
+
+# Case:2                          changing type of arguments to the method
+
+   # this over loading is not possible in python,because in python arguments types are defind by the given value implicitly
+
+
+# NOTE:   Indirect way to achive method over loading by using 'Arbitary arguments'
+
+example: 2
+class overload1:
+	i = None
+	def product(self,*a):
+		for x in a:
+			if self.i == None:
+				self.i = x
+			else:
+				self.i = self.i *x
+		print(self.i,'\n')
+		self.i = None
+o1 = overload1()
+#o1.product(5,6,7) # output: 210
+#o1.product(5,6)	   # output: 30
+#o1.product(5)	   #output: 5
+
+# Method over riding
+
+# python supports 'Method over riding', to impliment method over riding inheritance is must and should
+Example():
+class account():
+	def __init__(self, bal, acc):
+		self.bal = bal
+		self.acc = acc
+	def interest(self):
+		interest = (self.bal*0.02)/100
+		print(interest)
+		self.bal += interest
+		print(self.bal)
+class currentaccount(account):
+	def interest(self):
+		interest = (self.bal*0.10)/100
+		print(interest)
+		self.bal += interest
+		print(self.bal)
+O =  account(500, 25)
+O.interest()
+O = currentaccount(500, 25)
+O.interest()
+
+output: 
+0.1
+500.1
+0.5
+500.5
+#it will call the function based upon the class name, then it should check the calling method available or not. 
+if it is available, then it will print that method, or else it will go up and check the method name in the above funcation.
+
