@@ -1,0 +1,108 @@
+#Copy an Object in python:
+
+In python, we use (=) operator to create a copy of an object. You may think that this creates a new object: it doesn't. 
+it only creates a new variable that shares the reference of the original object.
+
+#Example:
+We have create a list named = Old_list and pass an object reference to new_list using (=) operator.
+
+#practise code:
+>>> old_list = [[1, 2, 3], [4, 5, 6], [7, 8, 'a']]
+>>> new_list = old_list
+>>> new_list[2][2] = 9
+>>> old_list
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> new_list
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> id(old_list)
+3002671571144
+>>> id(new_list)
+3002671571144
+
+#Essentially, sometimes you may want to have the original values unchanged and only modify the new values or vice versa. In Python, there are two ways to create copies:
+
+1. Shallow Copy
+2. Deep Copy
+To make these copy work, we use the copy module.
+
+1. Shallow Copy:
+A shallow copy creates a new object which stores the reference of the original elements.
+So, a shallow copy doesn't create a copy of nested objects, instead it just copies the reference of nested objects. This means, a copy process does not recurse or create copies of nested objects itself.
+
+Example 2: Create a copy using shallow copy:
+>>> import copy
+>>>
+>>> old_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> new_list = copy.copy(old_list)
+>>>
+>>> print("Old list:", old_list)
+Old list: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> print("New list:", new_list)
+New list: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+#Adding [4, 4, 4] to old_list, using shallow copy:
+import copy
+
+old_list = [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+new_list = copy.copy(old_list)
+
+old_list.append([4, 4, 4])
+
+print("Old list:", old_list)
+print("New list:", new_list)
+
+When we run the program, it will output:
+
+Old list: [[1, 1, 1], [2, 2, 2], [3, 3, 3], [4, 4, 4]]
+New list: [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+
+Example 4: Adding new nested object using Shallow copy:
+import copy
+
+old_list = [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+new_list = copy.copy(old_list)
+
+old_list[1][1] = 'AA'
+
+print("Old list:", old_list)
+print("New list:", new_list)
+
+When we run the program, it will output:
+
+Old list: [[1, 1, 1], [2, 'AA', 2], [3, 3, 3]]
+New list: [[1, 1, 1], [2, 'AA', 2], [3, 3, 3]]
+
+#2. Deep Copy():
+
+A deep copy creates a new object and recursively adds the copies of nested objects present in the original elements.
+Let’s continue with example 2. However, we are going to create deep copy using deepcopy() function present in copy module. The deep copy creates independent copy of original object and all its nested objects.
+import copy
+
+old_list = [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+new_list = copy.deepcopy(old_list)
+
+print("Old list:", old_list)
+print("New list:", new_list)
+
+When we run the program, it will output:
+
+Old list: [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+New list: [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+
+#Example 6: Adding a new nested object in the list using Deep copy
+import copy
+
+old_list = [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+new_list = copy.deepcopy(old_list)
+
+old_list[1][0] = 'BB'
+
+print("Old list:", old_list)
+print("New list:", new_list)
+
+When we run the program, it will output:
+
+Old list: [[1, 1, 1], ['BB', 2, 2], [3, 3, 3]]
+New list: [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+
+
