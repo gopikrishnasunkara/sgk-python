@@ -119,3 +119,166 @@ import re
 str = "Powerstar Pawankalayan is an Actor"
 x = re.sub("A","a", str)
 print(x)
+
+
+import re
+#Metacharacters:
+#1. [] - A set of characters("[a-m]"): it find the character range between metioned in findall as like below.
+#str = "i love India"
+#x = re.findall("[a-m,A-m]", str)
+#print(x)
+
+
+#2.\ - Singnals s special sequence(can also be used to escape special characters)("\d"):
+#txt = "That will be 59 dollars"
+#Find all digit characters:
+#x = re.findall("\d", txt)
+#print(x)
+
+#output: It will find the all digits from the string or variable.
+
+#3 . - any character(except newline character)('he..o"):
+
+txt = "hello planet"
+#Search for a sequence that starts with "he", followed by two (any) characters, and an "o":
+x = re.findall("he..o", txt)
+print(x)
+
+output:['hello']
+
+
+another example:
+import re
+txt = "hello planet"
+#Search for a sequence that starts with "he", followed by two (any) characters, and an "o":
+x = re.findall(".", txt)
+print(x)
+
+output:['h', 'e', 'l', 'l', 'o', ' ', 'p', 'l', 'a', 'n', 'e', 't']
+
+4. ^ - starts with ("^hello"):
+import re
+
+txt = "hello planet"
+
+#Check if the string starts with 'hello':
+
+x = re.findall("^hello", txt)
+print(x)
+
+Output:['hello']
+
+
+#Another example:
+txt = "The hello planet"
+
+#Check if the string starts with 'hello':
+
+x = re.findall("^hello", txt)
+print(x)
+output: []
+
+5. $ - Ends with ("planet$"):
+import re
+
+txt = "hello planet"
+
+#Check if the string starts with 'hello':
+
+x = re.findall("planet$", txt)
+print(x)
+
+Output:['planet']
+
+
+#Another example:
+txt = "The hello planet"
+
+#Check if the string starts with 'hello':
+
+x = re.findall("^planet$", txt)
+print(x)
+output: []
+
+6. * - Zero or more occurrences("he.*o"):
+txt = "helloooo planet"
+
+#Search for a sequence that starts with "he", followed by 0 or more  (any) characters, and an "o":
+
+x = re.findall("he.*o", txt)
+
+print(x)
+txt = "helloooo planet"
+
+#Search for a sequence that starts with "he", followed by 0 or more  (any) characters, and an "o":
+x = re.findall("he.*o", txt)
+print(x)
+output:['helloooo']
+
+Anthor example:
+#Search for a sequence that starts with "he", followed by 0 or more  (any) characters, and an "o":
+x = re.findall("he*o", txt)
+print(x)
+
+output: []
+
+7. + - One or more occurrences("he.+o"):
+txt = "hello planet"
+#Search for a sequence that starts with "he", followed by 1 or more  (any) characters, and an "o":
+x = re.findall("he.+o", txt)
+
+print(x)
+Output: ['hello']
+
+another example:
+txt = "hello planet"
+#Search for a sequence that starts with "he", followed by 1 or more  (any) characters, and an "o":
+x = re.findall("he+o", txt)
+
+print(x)
+
+Output: []
+
+8. ? - Zero or one occurrences("he.?o"):
+txt = "hello planet"
+
+#Search for a sequence that starts with "he", followed by 0 or 1  (any) character, and an "o":
+
+x = re.findall("he.?o", txt)
+
+print(x)
+
+#This time we got no match, because there were not zero, not one, but two characters between "he" and the "o"
+
+Output: []
+
+9. {} - Exactly the specified number of occurrences("he{2}o"):
+txt = "hello planet"
+
+#Search for a sequence that starts with "he", followed excactly 2 (any) characters, and an "o":
+
+x = re.findall("he.{2}o", txt)
+
+print(x)
+output: ['hello']
+
+Another example:
+
+txt = "hello planet"
+
+#Search for a sequence that starts with "he", followed excactly 2 (any) characters, and an "o":
+
+x = re.findall("he.{3}o", txt)
+
+print(x)
+output: []
+
+10. |- Either or("falls|stays):
+txt = "The rain in Spain falls mainly in the plain!"
+
+#Check if the string contains either "falls" or "stays":
+
+x = re.findall("falls|stays", txt)
+
+print(x)
+output: ['falls']
