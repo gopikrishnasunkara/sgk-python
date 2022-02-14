@@ -1,4 +1,5 @@
 #File operations:
+print("srirama")
 #File is a name location on disk to store related information. It is used to permantely store data in non-volatile memory(e.g hard disks).
 #since the random access memory(RAM) is volatile which loses the data when computer is turned off, we use the files for future use of data.
 #when we want to read from or write to a file we need to open the file it first, when we are done, it need to be closed , so that resources that are tired with file are freed.
