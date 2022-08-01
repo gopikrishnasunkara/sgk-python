@@ -1,0 +1,217 @@
+Jai srirama:
+
+Python Interview Questions:
+
+Interview -1:
+
+What is the Multiple Inheritance?
+What is the GIL?
+What is Generators?
+What is Decorators?
+Limitations of django?
+Advantages of django compare with other framework?
+what Architecture django follows?
+Method Overloding and Overriding?
+What is the Shallow copy and Deepcopy?
+Questions on Database?
+What is Access Modifiers?
+How we can access Private variables?
+How we can define private & Protected?
+About MRO?
+Why we need MRO?
+Which can take much memory loops or Generators? why?
+What is Mixin?
+Types of views? which is the best? Why?
+What is Proxy?
+
+Interview - 2:
+Explain about your Project?
+Where you have involved in this project?
+What is role of your in your Project?
+How will you get a work?
+What is the daily routin?
+About GIT?
+GIT Commands?
+What is the use of GIT?
+Difference Between List & Tuple?
+OOPS concept?
+How to destroy the object in python?
+What is the Constructure?
+What is the Django and Which Architecture follows?
+What is the difference between primary key and unique key?
+Explain project structure?
+How to create a Project and Application?
+How to run the server and How we can change the port Numbers?
+Modules?
+What is the code for display current time?
+About settings.py file?
+How to Generate table?
+What is the code for Model?
+we can add one column manually without using Migrations?
+What is the decorators and use of decorator?
+What is the advantages of DJnago?
+HTML Tags?
+How many ways css migrate with HTML?
+How key joins in mysql? What are they?
+What is the project structure?
+Where you have used DRF in your project?
+What is the difference between Python 2 and Python 3?
+Which version you have used in your project?
+
+
+Interview - 3:
+Brief about your project?
+Expalin about API Intergaration?
+Daily routins of your project?
+What are the techinical designs your included?
+Difference between list & Tuple?
+What is the Packing and Unpacking?
+What is the difference between Range & Xrange?
+Which module do you worked on UI part?
+What are the Modules?
+How you used Django in your project?
+What is the NameSpace?
+
+Interview - 4:
+Abstraction Scenerio?
+Polymorphism in python?
+Decorators?
+Generators?
+Immutable elements?
+String is Mutable or Immutable?
+coding test on Dict?
+serialization?
+custom Authentication?
+session Management?
+Advantages of generators? Real scenerio's?
+
+Interview - 5:
+Tell me about your self?
+Decorators?
+difference between tuple & list?
+Expalin about Dict?
+What data types we can used in Key?
+Authentication techiniques?
+Serialization?
+What is the abstract class?
+what is the polymorphism?
+what is the thread?
+what is the Race?
+what is the Serializers?
+What is the class? what is the purpose of the class?
+HTML:
+Tell me inline tags?
+
+
+Interview - 6:
+Tell me about your self?
+What are signals in django?
+What are the design patterns?
+Which design patterns django follow?
+explain about MVT Architecture?
+What is the Packing and Unpacking?
+What are the Iteratros in python?
+What is decorators?
+what is the python? what are the disadvatages?
+What are the middlewares in django?
+What is the session management?
+OOPS?
+What are the data structors in python?
+difference between Array & list?
+What is the namespace?
+What is the PEP8?
+What is the purpose of Negative index in python?
+What is the lambda function and what is the purpose of that?
+What is the class?
+What is the slicing?
+Why python is interpreated?
+Why python is dynamically typed
+What is Unittesing?
+Which libraries are used for unittesting?
+What are the stiatic variables?
+What are the attributes in python?
+How does the  break, continue, pass work?
+What are the docstring in python?
+What is *args and **keyargs?
+What is the pass by value and pass by reference?
+
+Interview - 7:
+Brief about your project?
+Tell me about your self?
+difference between tuple & list?
+Expalin about Dict?
+Where you have used list in your project?
+What are the modules you worked on?
+What manily you used for dashboard?
+What are the list comprhension?
+
+Interview - 8:
+Brief about your project?
+Tell me about your self?
+Generators?
+Decorators?
+Multithreading?
+If you have list? How we can combine them [["naveen"]]["kumar]]?
+How can you combine two tables in mysql?
+What is mixin?
+session management?
+cookies?
+wsgi.py file?
+manage.py file?
+What is version control tool?
+exception handling questions?
+Difference between flask and Django?
+
+Interview - 9:
+Difference between list  & Tuple?
+palindrome?
+split programme?
+xrange and range?
+
+Interview - 10:
+Dictionary, List, Tuple?
+overriding programmes?
+try and except methods?
+What is the self?
+
+
+Interview - 11:
+Tell me about your self?
+How will you submit the code for git and to which branch?
+how will you get the data from the database to display?
+Where you have implementd polymorphism in your project?
+How will you set query set to the?
+How will you create simple web application?
+How will you sort alphabet list?
+conflicts in git?
+
+
+AWS Interview Questions:
+
+1. Difference between instance STOP and Termination?
+2. Maximum size of object to store in S3 bucket?
+3. What is the NAT gateway?
+4. what is delete on Termination on EBS volume?
+5. What is difference between Public and Private subnets?
+6. How to move one instance from one region to another region?
+7. S3 bucket policies and object polices in s3?
+8. What is rout table?
+9. What is Autoscalling?
+10. What is the Loadbalancer?
+11. What is the cloud watch?
+12. What is the cloudtrail?
+13. What is the SNS and SES?
+14. What is CI/CD?
+15. What is the GIT and USe of GIT?
+	. git pull
+	. git push
+	. git add
+	. git status
+	. git commit
+	. git fork
+
+16. How do you connect python with aws s3 bucket?
+17. What is the difference between Boto 3 resource and client resource?
+18. How you link security group while creating EC2 instance?
+
+

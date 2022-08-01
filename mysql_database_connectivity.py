@@ -240,3 +240,23 @@ mysql> SELECT * FROM student;
 6 rows in set (0.00 sec)
 
 mysql>
+
+
+# sqlite database connectivity:
+import sqlite3
+conn = sqlite3.connect ('employee.db')
+c = conn.cursor()
+# c.execute("""CREATE TABLE employees (
+# 	     first_Name text,
+# 	     Last_Name text,
+# 	     Pay interger
+# 		)""")
+
+c.execute("INSERT INTO employees VALUES ('Nani', 'Nemmadi', 50000)")
+conn.commit()
+
+c.execute("SELECT *FROM employees")
+print(c.fetchall())
+
+conn.commit()
+conn.close()
