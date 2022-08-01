@@ -251,3 +251,35 @@ Output: Traceback (most recent call last):
   File "ros.py", line 3, in <module>
     f1.write(f.readlines())
 TypeError: a bytes-like object is required, not 'list'
+
+
+#Import a module from one file to another using "import" keyword.
+
+#Approach:
+#1. Create a python file containing the required functions.
+#2. Create another python file and import the previous python file into it.
+#3. call the functions defined in the imported file.
+
+#file1: Test.py
+
+print("jai srirama")
+
+def Display():
+    print("This is from Test.py file")
+
+def AddNumbers(a, b):
+    print("Sum is : ", a+b)
+def SubstactNumbers(a, b):
+    print("difference is : ", a-b)
+def DivideNumbers(a, b):
+    print("Division is : ", a/b)
+def ModulusNumbers(a, b):
+    print("Reminder is : ", a % b)
+
+#file2:Test1.py
+#from test import Display, AddNumbers, SubstactNumbers
+from Test import *
+Display()
+
+AddNumbers(2, 5)
+SubstactNumbers(5, 4)
